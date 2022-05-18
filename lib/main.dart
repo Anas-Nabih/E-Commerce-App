@@ -1,5 +1,6 @@
-import 'package:e_commerse_app_uising_getx/view/login_view.dart';
+import 'package:e_commerse_app_uising_getx/view/auth/login_view.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:sizer/sizer.dart';
 
 void main(){
@@ -12,7 +13,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Sizer(
-      builder: (context, orientation, deviceType) => MaterialApp(
+      builder: (context, orientation, deviceType) => GetMaterialApp(
         debugShowCheckedModeBanner: false,
         home: LoginView(),
       ),
