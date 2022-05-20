@@ -25,7 +25,6 @@ this.iconData,this.hintText,this.hasSuffix = false,this.onSave,this.validator })
           decoration: InputDecoration(
               hintText: hintText,
             suffixIcon: hasSuffix ? Container(): Icon(iconData),
-
           ),
         ),
       ],

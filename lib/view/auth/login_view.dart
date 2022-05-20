@@ -1,6 +1,8 @@
+import 'package:e_commerse_app_uising_getx/core/viewmodel/auth_view_model.dart';
 import 'package:e_commerse_app_uising_getx/res/colors.dart';
 import 'package:e_commerse_app_uising_getx/view/auth/sign_in_view.dart';
 import 'package:e_commerse_app_uising_getx/widgets/custom_btn.dart';
+import 'package:e_commerse_app_uising_getx/widgets/custom_text.dart';
 import 'package:e_commerse_app_uising_getx/widgets/custom_text_form_field.dart';
 import 'package:e_commerse_app_uising_getx/widgets/social_btn.dart';
 import 'package:flutter/material.dart';
@@ -10,7 +12,8 @@ import 'package:sizer/sizer.dart';
 class LoginView extends GetView {
 
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
-  @override
+  final AuthViewModel viewModel = Get.put(AuthViewModel());
+   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
@@ -42,7 +45,7 @@ class LoginView extends GetView {
                         Text("Welcome",style: TextStyle(fontSize: 18.sp,fontWeight: FontWeight.bold),),
                         GestureDetector(
                           onTap: ()=>Get.to(SignInView()),
-                            child: Text("sign in",style: TextStyle(fontSize: 14.sp,color: MColors.primaryColor),)),
+                          child: Text("sign in",style: TextStyle(fontSize: 14.sp,color: MColors.primaryColor),)),
                       ],
                     ),
                     Text("Sign in to continue",style: TextStyle(color: MColors.hintColor,fontSize: 12.sp,fontWeight: FontWeight.w400),),

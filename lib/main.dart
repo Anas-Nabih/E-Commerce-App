@@ -1,4 +1,7 @@
-  import 'package:e_commerse_app_uising_getx/view/home/home_view.dart';
+  import 'package:e_commerse_app_uising_getx/res/colors.dart';
+import 'package:e_commerse_app_uising_getx/view/auth/login_view.dart';
+import 'package:e_commerse_app_uising_getx/view/catergories_view/categories_view.dart';
+import 'package:e_commerse_app_uising_getx/view/home/home_view.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:sizer/sizer.dart';

@@ -8,11 +8,11 @@ class BestSelling {
 
    static List<BestSelling> bestSellingList = [
      BestSelling(title: "BeoPlay Speaker",desc: "Bang and Olfusen",price: 755,image: "assets/images/ch.png"),
+     BestSelling(title: "BeoPlay Speaker",desc: "Bang and Olfusen",price: 755,image: "assets/images/Image.png"),
      BestSelling(title: "BeoPlay Speaker",desc: "Bang and Olfusen",price: 755,image: "assets/images/ch.png"),
+     BestSelling(title: "BeoPlay Speaker",desc: "Bang and Olfusen",price: 755,image: "assets/images/Image.png"),
      BestSelling(title: "BeoPlay Speaker",desc: "Bang and Olfusen",price: 755,image: "assets/images/ch.png"),
-     BestSelling(title: "BeoPlay Speaker",desc: "Bang and Olfusen",price: 755,image: "assets/images/ch.png"),
-     BestSelling(title: "BeoPlay Speaker",desc: "Bang and Olfusen",price: 755,image: "assets/images/Anas.jpg"),
-     BestSelling(title: "BeoPlay Speaker",desc: "Bang and Olfusen",price: 755,image: "assets/images/ch.png"),
+     BestSelling(title: "BeoPlay Speaker",desc: "Bang and Olfusen",price: 755,image: "assets/images/Image.png"),
      BestSelling(title: "BeoPlay Speaker",desc: "Bang and Olfusen",price: 755,image: "assets/images/ch.png"),
 
 
