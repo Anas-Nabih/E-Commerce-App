@@ -5,26 +5,27 @@ import 'package:sizer/sizer.dart';
 
 class CustomGridView extends StatelessWidget {
   final List<BestSelling> gridList;
+  final bool isFromHome;
 
-  const CustomGridView({this.gridList});
+  const CustomGridView({this.gridList, this.isFromHome = false});
 
   @override
   Widget build(BuildContext context) {
-    return Expanded(
-      child: ScrollConfiguration(
-        behavior: MaterialScrollBehavior().copyWith(overscroll: false),
-        child: Padding(
-          padding: EdgeInsets.symmetric(horizontal: 8.w),
-          child: GridView.builder(
-            itemCount: gridList.length,
-            gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                crossAxisCount: 2,
-                mainAxisExtent: 46.h,
-                mainAxisSpacing: 2.h,
-                crossAxisSpacing: 6.w),
-            itemBuilder: (context, index) => ProductCard(
-              product: gridList[index],
-            ),
+    return ScrollConfiguration(
+      behavior: MaterialScrollBehavior().copyWith(overscroll: false),
+      child: Padding(
+        padding: EdgeInsets.symmetric(horizontal: 8.w),
+        child: GridView.builder(
+          itemCount: BestSelling.bestSellingList.length,
+          physics:BouncingScrollPhysics(),
+          shrinkWrap: true,
+          gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+              crossAxisCount: 2,
+              mainAxisExtent: 46.h,
+              mainAxisSpacing: 2.h,
+              crossAxisSpacing: 6.w),
+          itemBuilder: (context, index) => ProductCard(
+            product: BestSelling.bestSellingList[index],
           ),
         ),
       ),

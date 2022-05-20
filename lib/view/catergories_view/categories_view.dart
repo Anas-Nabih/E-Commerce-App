@@ -20,11 +20,7 @@ class CategoriesView extends GetView{
             onTap: ()=>Get.back(),
             child: Icon(Icons.arrow_back_ios,color: MColors.hintColor,)),
       ),
-      body: Column(
-        children: [
-          CustomGridView(gridList: BestSelling.bestSellingList,),
-        ],
-      ),
+      body: CustomGridView(gridList: BestSelling.bestSellingList,),
     );
   }
 }
