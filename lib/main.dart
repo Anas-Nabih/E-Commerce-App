@@ -16,6 +16,9 @@ class MyApp extends StatelessWidget {
     return Sizer(
       builder: (context, orientation, deviceType) => GetMaterialApp(
         debugShowCheckedModeBanner: false,
+        theme: ThemeData(
+          fontFamily: "SourceSans"
+        ),
         home: MainView(),
       ),
     );

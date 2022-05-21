@@ -1,5 +1,6 @@
 import 'package:e_commerse_app_uising_getx/core/viewmodel/main_view_model.dart';
 import 'package:e_commerse_app_uising_getx/res/colors.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:sizer/sizer.dart';
@@ -16,10 +17,13 @@ class MainView extends GetView<MainViewModel>{
           height: 8.h,
           decoration: BoxDecoration(
               color: Colors.white,
-              borderRadius: BorderRadius.circular(14),
+              borderRadius: BorderRadius.only(
+                topRight: Radius.circular(14),
+                topLeft: Radius.circular(14)
+              ),
               boxShadow: [
                 BoxShadow(
-                    color: MColors.lightGreyColor,
+                    color: MColors.hintColor.withOpacity(0.3),
                     blurRadius: 3,spreadRadius: 1
                 )
               ]
