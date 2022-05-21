@@ -8,20 +8,22 @@ class CartList extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ListView.separated(
-      itemCount:list.length,
-      physics: BouncingScrollPhysics(),
-      separatorBuilder: (context, index) => SizedBox(height: 3.h,),
-      itemBuilder: (context, index) => Dismissible(
-          key: Key(list[index].id),
+    return Expanded(
+      child: ListView.separated(
+        itemCount:list.length,
+        physics: BouncingScrollPhysics(),
+        separatorBuilder: (context, index) => SizedBox(height: 3.h,),
+        itemBuilder: (context, index) => Dismissible(
+            key: Key(list[index].id),
 
-          background: Container(
-            height: 20.h,
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(8),
-              color: Colors.red
+            background: Container(
+              height: 20.h,
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(8),
+                color: Colors.red
+              ),
             ),
-          ),
-          child: CartItem(item:list[index],index:index)),);
+            child: CartItem(item:list[index],index:index)),),
+    );
   }
 }

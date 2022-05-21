@@ -10,7 +10,7 @@ class ProductDetailsView extends GetView {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      bottomSheet: ProductDetailsBottomSheet(price: 155,),
+      bottomSheet: PriceBottomSheet(price: 155,btnTitle: "Add to cart",),
       body: ScrollConfiguration(
         behavior: MaterialScrollBehavior().copyWith(overscroll: false),
         child: CustomScrollView(
@@ -86,7 +86,7 @@ class ProductDetailsView extends GetView {
                                   width: 2.5.h,
                                   decoration: BoxDecoration(
                                     borderRadius: BorderRadius.circular(4),
-                                    color: Color(0xff31407B),
+                                    color: Color(0xff31407B ),
                                   ),
                                 ),
                               ],
