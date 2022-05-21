@@ -13,7 +13,7 @@ class CategoriesList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: 20.h,
+      height: 17.h,
       child: Row(
         children: [
           SizedBox(

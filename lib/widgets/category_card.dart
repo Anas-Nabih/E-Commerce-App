@@ -15,7 +15,6 @@ class CategoryCard extends StatelessWidget {
       children: [
         Container(
           height: 10.h,width: 10.h,
-          padding: EdgeInsets.all(8),
           margin: EdgeInsets.symmetric(horizontal: 2.w,vertical: 2.h),
           decoration: BoxDecoration(
               color: Colors.white,

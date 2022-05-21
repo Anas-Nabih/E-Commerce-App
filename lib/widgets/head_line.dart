@@ -11,7 +11,7 @@ class HeadLine extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.only(left: 5.w, right: 5.w, bottom: 2.h),
+      padding: EdgeInsets.only(left: 5.w, right: 5.w, /*bottom: 2.h*/),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
