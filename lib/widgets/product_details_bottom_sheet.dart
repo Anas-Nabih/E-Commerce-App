@@ -30,7 +30,7 @@ class PriceBottomSheet extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              CustomText(text: "PRICE",fontWeight: FontWeight.w400,
+              CustomText(text: "PRRRRRICE",fontWeight: FontWeight.w400,
                 fontSize: 12.sp,),
               CustomText(text: "\$$price",fontWeight: FontWeight.w600,
                 fontSize: 14.sp,color: MColors.primaryColor,),
