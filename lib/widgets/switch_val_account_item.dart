@@ -56,9 +56,11 @@ class SwitchValAccountItem extends StatelessWidget {
                       Prefs.setNotificationStatus(val);
                     })
                 : CupertinoSwitch(
-                    value: accountController.isLightTheme.value,
+                    value: accountController.isDarkTheme.value,
                     onChanged: (val) {
-                      accountController.isLightTheme.value = val;
+                      accountController.isDarkTheme.value = val;
+                      Get.changeThemeMode(accountController.isDarkTheme.value ? ThemeMode.dark : ThemeMode.light);
+                      // accountController.changeThemeMode();
                       Prefs.setThemeMode(val);
                     })
           ],

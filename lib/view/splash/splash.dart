@@ -4,6 +4,8 @@ import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
 
 class SplashView extends GetView<SplashController>{
+  final authService = Get.put(SplashController());
+  final splashController= Get.find<SplashController>();
 
   @override
   Widget build(BuildContext context) {

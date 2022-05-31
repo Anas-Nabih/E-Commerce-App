@@ -3,7 +3,7 @@ import 'package:e_commerse_app_uising_getx/res/commen_uils/preference/helper.dar
 
 class Prefs{
 
-  // theme mode light return true, dark return false
+  // theme mode light return false, dark return true
   static setThemeMode(bool value) =>
      PreferencesHelper.setBool(Const.THEME_STATUS, value);
 
