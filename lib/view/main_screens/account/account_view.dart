@@ -1,12 +1,14 @@
-import 'package:e_commerse_app_uising_getx/res/colors.dart';
+import 'package:e_commerse_app_uising_getx/core/viewmodel/AccountController.dart';
+import 'package:e_commerse_app_uising_getx/res/styles/colors.dart';
 import 'package:e_commerse_app_uising_getx/widgets/account_item.dart';
 import 'package:e_commerse_app_uising_getx/widgets/custom_text.dart';
+import 'package:e_commerse_app_uising_getx/widgets/switch_val_account_item.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:sizer/sizer.dart';
 
 
-class AccountView extends GetView{
+class AccountView extends GetView<AccountController>{
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -43,9 +45,10 @@ class AccountView extends GetView{
                   )
                 ],
               ),
-              SizedBox(height: 6.h,),
+              SizedBox(height: 3.h,),
               AccountItem(title: "Edit Profile",),
-              AccountItem(title: "Notifications",),
+              SwitchValAccountItem(title: "Notifications",isNotificationSwitcher: true),
+              SwitchValAccountItem(title: "Dark Mode",hasIcon: true,iconData: Icons.dark_mode_outlined),
               AccountItem(title: "Shipping Address",),
               AccountItem(title: "Order history",),
               AccountItem(title: "Cards",),

@@ -5,8 +5,10 @@ import 'package:flutter/material.dart';
 class AccountItem extends StatelessWidget {
   final String title, image;
   final bool isEnd;
+  final bool hasIcon;
+  final IconData iconData;
   const AccountItem({
-    this.title,this.image,this.isEnd = false
+    this.title,this.iconData,this.image,this.isEnd = false,this.hasIcon= false
   });
 
   @override
@@ -15,7 +17,8 @@ class AccountItem extends StatelessWidget {
       padding: EdgeInsets.symmetric(vertical: 2.h),
       child: Row(
         children: [
-          Image.asset("assets/images/edit-button1.png",width: 5.w,),
+          hasIcon ? Icon(iconData)
+              : Image.asset(image == null? "assets/images/edit-button1.png" : image,width: 5.w,),
           SizedBox(width: 5.w,),
           CustomText(text: title,fontSize: 15.sp,fontWeight: FontWeight.w400,),
           Spacer(),

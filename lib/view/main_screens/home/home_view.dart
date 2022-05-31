@@ -1,4 +1,4 @@
-import 'package:e_commerse_app_uising_getx/res/colors.dart';
+import 'package:e_commerse_app_uising_getx/res/styles/colors.dart';
 import 'package:e_commerse_app_uising_getx/model/best_selling_model.dart';
 import 'package:e_commerse_app_uising_getx/model/home_model.dart';
 import 'package:e_commerse_app_uising_getx/widgets/custom_categories_list.dart';

@@ -1,5 +1,5 @@
 import 'package:e_commerse_app_uising_getx/model/best_selling_model.dart';
-import 'package:e_commerse_app_uising_getx/res/colors.dart';
+import 'package:e_commerse_app_uising_getx/res/styles/colors.dart';
 import 'package:e_commerse_app_uising_getx/widgets/custom_grid_view.dart';
 import 'package:e_commerse_app_uising_getx/widgets/custom_text.dart';
 import 'package:flutter/material.dart';

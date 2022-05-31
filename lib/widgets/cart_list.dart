@@ -14,7 +14,7 @@ class CartList extends StatelessWidget {
         physics: BouncingScrollPhysics(),
         separatorBuilder: (context, index) => SizedBox(height: 3.h,),
         itemBuilder: (context, index) => Dismissible(
-            key: Key(list[index].id),
+            key: Key("${list[index].id}"),
 
             background: Container(
               height: 20.h,
