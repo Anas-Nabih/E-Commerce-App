@@ -17,7 +17,7 @@ class HomeView extends GetView{
         physics: BouncingScrollPhysics(),
          slivers: [
           SliverAppBar(
-            backgroundColor: MColors.page_background,
+            // backgroundColor: MColors.page_background,
             elevation: 4,
             toolbarHeight: 12.h,
             title: Column(

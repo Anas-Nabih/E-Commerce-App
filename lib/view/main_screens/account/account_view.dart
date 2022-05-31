@@ -9,9 +9,10 @@ import 'package:sizer/sizer.dart';
 
 
 class AccountView extends GetView<AccountController>{
+
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return Obx(() => Scaffold(
       body: SafeArea(
         child: Padding(
           padding: EdgeInsets.symmetric(horizontal: 5.w),
@@ -23,18 +24,18 @@ class AccountView extends GetView<AccountController>{
                     height: 20.h,width: 20.h,
                     margin: EdgeInsets.only(top: 5.h),
                     decoration: BoxDecoration(
-                      shape: BoxShape.circle,
-                      image: DecorationImage(
-                        image: AssetImage("assets/images/Anas.jpg")
-                      ),
-                      boxShadow: [
-                        BoxShadow(
-                          color: MColors.lightGreyColor,
-                          offset: Offset(0,0),blurRadius: 4,spreadRadius: 2
-                        )
-                      ]
+                        shape: BoxShape.circle,
+                        image: DecorationImage(
+                            image: AssetImage("assets/images/Anas.jpg")
+                        ),
+                        boxShadow: [
+                          BoxShadow(
+                              color: MColors.lightGreyColor,
+                              offset: Offset(0,0),blurRadius: 4,spreadRadius: 2
+                          )
+                        ]
                     ),
-                   ),
+                  ),
                   SizedBox(width: 4.w,),
                   Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
@@ -48,7 +49,7 @@ class AccountView extends GetView<AccountController>{
               SizedBox(height: 3.h,),
               AccountItem(title: "Edit Profile",),
               SwitchValAccountItem(title: "Notifications",isNotificationSwitcher: true),
-              SwitchValAccountItem(title: "Dark Mode",hasIcon: true,iconData: Icons.dark_mode_outlined),
+              SwitchValAccountItem(title: "Dark Mode",hasIcon: true,iconData: controller.isDarkTheme.value ? Icons.light_mode_outlined : Icons.dark_mode_outlined),
               AccountItem(title: "Shipping Address",),
               AccountItem(title: "Order history",),
               AccountItem(title: "Cards",),
@@ -59,7 +60,7 @@ class AccountView extends GetView<AccountController>{
         ),
       ),
 
-    );
+    ),);
   }
 }
 
