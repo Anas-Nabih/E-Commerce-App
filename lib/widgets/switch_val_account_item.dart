@@ -46,8 +46,7 @@ class SwitchValAccountItem extends StatelessWidget {
             SizedBox(
               width: 5.w,
             ),
-            (Theme.of(context).brightness == Brightness.dark) ? Icon(Icons.add): Icon(Icons.remove),
-            CustomText(
+             CustomText(
               text: title,
               fontSize: 15.sp,
               fontWeight: FontWeight.w400,

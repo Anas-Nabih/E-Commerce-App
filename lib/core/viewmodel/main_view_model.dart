@@ -7,6 +7,8 @@ import 'package:get/get.dart';
 class MainViewModel extends GetxController with SingleGetTickerProviderMixin {
   TabController tabController;
 
+  RxInt tabIndex = 0.obs;
+
   List<Widget> pages = [HomeView(), CartView(), AccountView()];
 
   @override
@@ -14,5 +16,6 @@ class MainViewModel extends GetxController with SingleGetTickerProviderMixin {
     // TODO: implement onInit
     super.onInit();
     tabController = TabController(length: pages.length, vsync: this);
+    tabIndex.value = tabController.index;
   }
 }
