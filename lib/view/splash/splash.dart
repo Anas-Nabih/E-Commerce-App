@@ -10,7 +10,7 @@ class SplashView extends GetView<SplashController>{
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
+      backgroundColor: Theme.of(context).backgroundColor,
       body: Center(child: Lottie.asset('assets/images/splash.json')),
     );
   }

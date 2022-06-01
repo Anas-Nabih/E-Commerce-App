@@ -8,10 +8,11 @@ class SplashController extends GetxController{
   @override
   void onInit() {
     super.onInit();
-    Prefs.getThemeMode.then((value) => print(value));
+    Prefs.getThemeMode.then((value) => isDark.value = value);
     goToMainScreen();
   }
 
+  RxBool isDark = false.obs;
   goToMainScreen(){
     Timer(Duration(seconds: 4), ()=>Get.offAll(MainView()));
   }

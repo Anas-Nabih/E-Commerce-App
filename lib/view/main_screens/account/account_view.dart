@@ -21,7 +21,7 @@ class AccountView extends GetView<AccountController>{
               Row(
                 children: [
                   Container(
-                    height: 20.h,width: 20.h,
+                    height: 15.h,width: 15.h,
                     margin: EdgeInsets.only(top: 5.h),
                     decoration: BoxDecoration(
                         shape: BoxShape.circle,
@@ -47,14 +47,25 @@ class AccountView extends GetView<AccountController>{
                 ],
               ),
               SizedBox(height: 3.h,),
-              AccountItem(title: "Edit Profile",),
-              SwitchValAccountItem(title: "Notifications",isNotificationSwitcher: true),
-              SwitchValAccountItem(title: "Dark Mode",hasIcon: true,iconData: controller.isDarkTheme.value ? Icons.light_mode_outlined : Icons.dark_mode_outlined),
-              AccountItem(title: "Shipping Address",),
-              AccountItem(title: "Order history",),
-              AccountItem(title: "Cards",),
-              AccountItem(title: "Language",),
-              AccountItem(title: "Log Out",isEnd: true,),
+              Expanded(
+                child: ScrollConfiguration(
+                  behavior: ScrollBehavior().copyWith(overscroll: false),
+                  child: ListView(
+                    shrinkWrap: true,
+                    physics: BouncingScrollPhysics(),
+                    children: [
+                      AccountItem(title: "Edit Profile",),
+                      SwitchValAccountItem(title: "Notifications",isNotificationSwitcher: true),
+                      SwitchValAccountItem(title: "Dark Mode",hasIcon: true,iconData: controller.isDarkTheme.value ? Icons.light_mode_outlined : Icons.dark_mode_outlined),
+                      AccountItem(title: "Shipping Address",),
+                      AccountItem(title: "Order history",),
+                      AccountItem(title: "Cards",),
+                      AccountItem(title: "Language",),
+                      AccountItem(title: "Log Out",isEnd: true,),
+                    ],
+                  ),
+                ),
+              )
             ],
           ),
         ),

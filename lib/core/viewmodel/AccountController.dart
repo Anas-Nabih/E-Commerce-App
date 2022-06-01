@@ -6,16 +6,10 @@ class AccountController extends GetxController{
 
 
   RxBool isDarkTheme = false.obs;
-  
-  getThemeStatus()async{
-    var _isDark = await Prefs.getThemeMode.then((value){
-      return value != null ? value : false;
-    }).obs;
-  }
 
-  changeThemeMode(){
-    print (isDarkTheme.value ? ThemeMode.dark : ThemeMode.light);
-    return isDarkTheme.value ? ThemeMode.dark : ThemeMode.light;
+  bool getCurrentTheme(){
+    Prefs.getThemeMode.then((value) => isDarkTheme.value = value);
+    return isDarkTheme.value;
   }
   RxBool openNotification = true.obs;
 

@@ -16,15 +16,15 @@ class MainView extends GetView<MainViewModel>{
         builder:(controller) =>Container(
           height: 8.h,
           decoration: BoxDecoration(
-              color: Colors.white,
+            color: Theme.of(context).backgroundColor,
               borderRadius: BorderRadius.only(
                 topRight: Radius.circular(14),
                 topLeft: Radius.circular(14)
               ),
               boxShadow: [
                 BoxShadow(
-                    color: MColors.hintColor.withOpacity(0.3),
-                    blurRadius: 3,spreadRadius: 1
+                    color: MColors.hintColor.withOpacity(0.2),
+                    blurRadius: 1,spreadRadius: 1
                 )
               ]
           ),
