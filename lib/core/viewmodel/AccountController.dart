@@ -1,10 +1,10 @@
  import 'package:e_commerse_app_uising_getx/res/commen_uils/preference/prefs.dart';
-import 'package:flutter/material.dart';
-import 'package:get/get.dart';
+ import 'package:get/get.dart';
 
 class AccountController extends GetxController{
 
 
+  RxInt selectedLanguage =0.obs;
   RxBool isDarkTheme = false.obs;
 
   bool getCurrentTheme(){
