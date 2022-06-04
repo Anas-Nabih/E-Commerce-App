@@ -40,7 +40,7 @@ class CustomTextFormField extends StatelessWidget {
         TextFormField(
           cursorColor: Get.theme.brightness == Brightness.dark
               ? Get.theme.colorScheme.primary
-              : Colors.red,
+              : MColors.hintColor,
           obscureText: obscure,
           onSaved: onSave ?? (val) {},
           onChanged: onChanged ?? (val) {},

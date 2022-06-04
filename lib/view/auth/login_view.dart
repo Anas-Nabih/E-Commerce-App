@@ -9,6 +9,7 @@ import 'package:get/get.dart';
 import 'package:sizer/sizer.dart';
 
 class LoginView extends GetView<AuthViewModel> {
+  final viewModel =Get.put(AuthViewModel());
   @override
   Widget build(BuildContext context) {
     return Obx(() => Scaffold(
@@ -116,6 +117,7 @@ class LoginView extends GetView<AuthViewModel> {
                         onTapped: () {
                           print(
                               "email: ${controller.email.value} password: ${controller.password.value}");
+                          controller.formKey.currentState.save();
                           if(controller.formKey.currentState.validate()){
                             controller.signInWithEmailAndPassword();
                           }

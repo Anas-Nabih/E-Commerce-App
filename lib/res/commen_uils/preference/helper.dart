@@ -23,4 +23,14 @@ class PreferencesHelper{
     final p = await prefs;
     return p.getInt(key);
   }
+
+  static setString(String key, String value)async{
+    final p = await prefs;
+    return p.setString(key, value);
+  }
+
+  static Future<String> getString(String key) async{
+    final p = await prefs;
+    return p.getString(key);
+  }
 }

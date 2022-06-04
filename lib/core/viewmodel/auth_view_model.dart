@@ -1,3 +1,5 @@
+import 'package:e_commerse_app_uising_getx/res/commen_uils/preference/prefs.dart';
+import 'package:e_commerse_app_uising_getx/view/auth/login_view.dart';
 import 'package:e_commerse_app_uising_getx/view/main_screens/main_view.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
@@ -31,8 +33,6 @@ class AuthViewModel extends GetxController {
         idToken: googleSignInAuthentication.idToken,
         accessToken: googleSignInAuthentication.accessToken);
 
-    UserCredential userCredential =
-        await _auth.signInWithCredential(credential);
     Get.offAll(MainView());
   }
 
@@ -51,11 +51,17 @@ class AuthViewModel extends GetxController {
   signInWithEmailAndPassword() async{
     try{
       await _auth.signInWithEmailAndPassword(email: email.value, password: password.value);
-      Get.offAll(MainView());
+      Prefs.setIsLogin(true);
+      Get.offAll(() => MainView());
     }catch(e){
       Get.snackbar("Error login account", e.message,);
       print(e.message);
     }
     
+  }
+
+  signOut(){
+    _auth.signOut();
+    Get.offAll(LoginView());
   }
 }

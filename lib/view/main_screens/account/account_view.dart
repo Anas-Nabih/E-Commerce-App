@@ -1,4 +1,5 @@
 import 'package:e_commerse_app_uising_getx/core/viewmodel/AccountController.dart';
+import 'package:e_commerse_app_uising_getx/core/viewmodel/auth_view_model.dart';
 import 'package:e_commerse_app_uising_getx/res/styles/colors.dart';
 import 'package:e_commerse_app_uising_getx/widgets/account_item.dart';
 import 'package:e_commerse_app_uising_getx/widgets/custom_text.dart';
@@ -10,6 +11,7 @@ import 'package:sizer/sizer.dart';
 
 class AccountView extends GetView<AccountController>{
 
+  final authController = Get.put(AuthViewModel());
   @override
   Widget build(BuildContext context) {
     return Obx(() => Scaffold(
@@ -61,7 +63,8 @@ class AccountView extends GetView<AccountController>{
                       AccountItem(title: "Order history",),
                       AccountItem(title: "Cards",),
                       AccountItem(title: "Language",),
-                      AccountItem(title: "Log Out",isEnd: true,),
+                      AccountItem(title: "Log Out",isEnd: true,
+                          onTapped: ()=>Get.find<AuthViewModel>().signOut()),
                     ],
                   ),
                 ),
