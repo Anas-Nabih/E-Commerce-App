@@ -20,6 +20,7 @@ class AuthViewModel extends GetxController {
     super.onInit();
   }
 
+  RxString userName = "".obs;
   RxString email = "".obs;
   RxString password = "".obs;
 
@@ -36,32 +37,51 @@ class AuthViewModel extends GetxController {
     Get.offAll(MainView());
   }
 
-  signInWithFacebook()async{
+  signInWithFacebook() async {
     FacebookLoginResult result = await _facebookLogin.logIn(["email"]);
     final accessToken = result.accessToken.token;
 
-    if(result.status == FacebookLoginStatus.loggedIn){
+    if (result.status == FacebookLoginStatus.loggedIn) {
       final facebookCredential = FacebookAuthProvider.credential(accessToken);
       await _auth.signInWithCredential(facebookCredential);
       print(facebookCredential);
     }
-    
   }
 
-  signInWithEmailAndPassword() async{
-    try{
-      await _auth.signInWithEmailAndPassword(email: email.value, password: password.value);
+  signInWithEmailAndPassword() async {
+    try {
+      await _auth.signInWithEmailAndPassword(
+          email: email.value, password: password.value);
       Prefs.setIsLogin(true);
       Get.offAll(() => MainView());
-    }catch(e){
-      Get.snackbar("Error login account", e.message,);
+    } catch (e) {
+      Get.snackbar(
+        "Error login account",
+        e.message,
+      );
       print(e.message);
     }
-    
   }
 
-  signOut(){
+  createAccountWithEmailAndPassword() async {
+    try {
+      await _auth.createUserWithEmailAndPassword(
+          email: email.value, password: password.value);
+      Prefs.setIsLogin(true);
+      Prefs.setUserName(userName.value);
+      Get.offAll(() => MainView());
+    } catch (e) {
+      Get.snackbar(
+        "Error login account",
+        e.message,
+      );
+      print(e.message);
+    }
+  }
+
+  signOut() {
     _auth.signOut();
-    Get.offAll(LoginView());
+    Prefs.setIsLogin(false);
+    Get.offAll(() => LoginView());
   }
 }

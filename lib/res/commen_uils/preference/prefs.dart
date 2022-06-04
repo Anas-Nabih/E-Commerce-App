@@ -22,25 +22,25 @@ class Prefs{
   static Future<bool> get getNotificationStatus =>
        PreferencesHelper.getBool(Const.NOTIFICATION_STATUS);
 
-  static setCurrentUser(String key,String value)=>
+  static setCurrentUser(String value)=>
       PreferencesHelper.setString(Const.CURRENT_USER, value);
 
   static Future<String> get getCurrentUser=>
       PreferencesHelper.getString(Const.CURRENT_USER);
 
-  static setUserName(String key,String value)=>
+  static setUserName(String value)=>
       PreferencesHelper.setString(Const.USER_NAME, value);
 
   static Future<String> get getUserName=>
       PreferencesHelper.getString(Const.USER_NAME);
 
-  static setUserImage(String key,String value)=>
+  static setUserImage(String value)=>
       PreferencesHelper.setString(Const.USER_IMAGE, value);
 
   static Future<String> get getUserImage=>
       PreferencesHelper.getString(Const.USER_IMAGE);
 
-  static setUserToken(String key,String value)=>
+  static setUserToken(String value)=>
       PreferencesHelper.setString(Const.USER_TOKEN, value);
 
   static Future<String> get getUserToken =>

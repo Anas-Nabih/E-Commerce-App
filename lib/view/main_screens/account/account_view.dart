@@ -21,15 +21,13 @@ class AccountView extends GetView<AccountController>{
           child: Column(
             children: [
               Row(
+                crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   Container(
-                    height: 15.h,width: 15.h,
+                    height: 12.h,width: 15.h,
                     margin: EdgeInsets.only(top: 5.h),
                     decoration: BoxDecoration(
-                        shape: BoxShape.circle,
-                        image: DecorationImage(
-                            image: AssetImage("assets/images/Anas.jpg")
-                        ),
+                      borderRadius: BorderRadius.circular(12),
                         boxShadow: [
                           BoxShadow(
                               color: MColors.lightGreyColor,
@@ -37,11 +35,15 @@ class AccountView extends GetView<AccountController>{
                           )
                         ]
                     ),
+                    child: ClipRRect(
+                        borderRadius: BorderRadius.circular(12),
+                        child: Image.asset("assets/images/Anas.jpg",fit: BoxFit.cover)),
                   ),
                   SizedBox(width: 4.w,),
                   Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
+                      SizedBox(height: 4.h),
                       CustomText(text: "Anas Nabih",fontWeight: FontWeight.w400,fontSize: 18.sp,),
                       CustomText(text: "anas7nabih@gmail.com",color: MColors.hintColor,fontWeight: FontWeight.w400,fontSize: 12.sp,),
                     ],

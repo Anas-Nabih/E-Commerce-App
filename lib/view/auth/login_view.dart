@@ -1,6 +1,6 @@
 import 'package:e_commerse_app_uising_getx/core/viewmodel/auth_view_model.dart';
 import 'package:e_commerse_app_uising_getx/res/styles/colors.dart';
-import 'package:e_commerse_app_uising_getx/view/auth/sign_in_view.dart';
+import 'package:e_commerse_app_uising_getx/view/auth/sign_up_view.dart';
 import 'package:e_commerse_app_uising_getx/widgets/custom_btn.dart';
 import 'package:e_commerse_app_uising_getx/widgets/custom_text_form_field.dart';
 import 'package:e_commerse_app_uising_getx/widgets/social_btn.dart';
@@ -45,7 +45,7 @@ class LoginView extends GetView<AuthViewModel> {
                               fontSize: 18.sp, fontWeight: FontWeight.bold),
                         ),
                         GestureDetector(
-                            onTap: () => Get.to(SignInView()),
+                            onTap: () => Get.to(()=>SignInView()),
                             child: Text(
                               "sign in",
                               style: TextStyle(
