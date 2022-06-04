@@ -10,6 +10,6 @@ class Binding extends Bindings{
     Get.lazyPut(() => AuthViewModel());
     Get.lazyPut(() => MainViewModel());
     Get.lazyPut(() => AccountController());
-    Get.lazyPut<SplashController>(() => SplashController());
+    Get.lazyPut(() => SplashController());
   }
 }

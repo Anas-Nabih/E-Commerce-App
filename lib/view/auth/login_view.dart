@@ -9,9 +9,6 @@ import 'package:get/get.dart';
 import 'package:sizer/sizer.dart';
 
 class LoginView extends GetView<AuthViewModel> {
-  final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
-  final AuthViewModel viewModel = Get.put(AuthViewModel());
-
   @override
   Widget build(BuildContext context) {
     return Obx(() => Scaffold(
@@ -22,7 +19,6 @@ class LoginView extends GetView<AuthViewModel> {
           child: Column(
             children: [
               Container(
-                height: 54.h,
                 padding: EdgeInsets.symmetric(vertical: 2.h, horizontal: 4.w),
                 decoration: BoxDecoration(
                     color: Theme.of(context).backgroundColor,
@@ -67,7 +63,7 @@ class LoginView extends GetView<AuthViewModel> {
                       height: 4.h,
                     ),
                     Form(
-                        key: _formKey,
+                        key: controller.formKey,
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
@@ -121,10 +117,12 @@ class LoginView extends GetView<AuthViewModel> {
               SocialBTN(
                 text: "Sign in with Facebook",
                 img: "assets/images/ic_facebook.png",
+                onTapped: ()=>controller.signInWithFacebook(),
               ),
               SocialBTN(
                 text: "Sign in with Google",
                 img: "assets/images/ic_google.png",
+                onTapped: ()=>controller.signInWithGoogle(),
               ),
             ],
           ),
