@@ -47,4 +47,15 @@ class AuthViewModel extends GetxController {
     }
     
   }
+
+  signInWithEmailAndPassword() async{
+    try{
+      await _auth.signInWithEmailAndPassword(email: email.value, password: password.value);
+      Get.offAll(MainView());
+    }catch(e){
+      Get.snackbar("Error login account", e.message,);
+      print(e.message);
+    }
+    
+  }
 }

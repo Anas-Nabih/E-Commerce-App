@@ -12,7 +12,7 @@ class CustomTextFormField extends StatelessWidget {
   final bool obscure;
   final Function onSave;
   final Function onChanged;
-  final Function validator;
+  final Function(String) validator;
 
   const CustomTextFormField(
       {this.labelTitle,

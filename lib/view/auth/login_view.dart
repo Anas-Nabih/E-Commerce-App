@@ -69,11 +69,17 @@ class LoginView extends GetView<AuthViewModel> {
                           children: [
                             CustomTextFormField(
                               labelTitle: "Email",
-                              hintText: "user@gemai.com",
+                              hintText: "user@gmail.com",
+                              hasSuffix: true,
                               onSave: (val) => controller.email.value = val,
                               onChanged: (val) => controller.email.value = val,
-                            ),
-                            SizedBox(
+                                validator:(val){
+                                  if(val.isEmpty){
+                                    return "please enter your email";
+                                  }
+                                  return null;
+                                } ,
+                            ),SizedBox(
                               height: 4.h,
                             ),
                             CustomTextFormField(
@@ -85,6 +91,14 @@ class LoginView extends GetView<AuthViewModel> {
                               iconData: controller.visiblePassword.value ? Icons.visibility:Icons.visibility_off ,
                               onSave: (val) => controller.password.value = val,
                               onChanged: (val) => controller.password.value = val,
+                              validator: (val){
+                                if(val.isEmpty){
+                                  return "please enter your password";
+                                }else if(val.length < 6 ){
+                                  return "password should be 6 chars at least";
+                                }
+                                return null;
+                              },
                             )
                           ],
                         )),
@@ -99,8 +113,13 @@ class LoginView extends GetView<AuthViewModel> {
                     ),
                     CustomBTN(
                         text: "Sign in",
-                        onTapped: () => print(
-                            "email: ${controller.email.value} password: ${controller.password.value}")),
+                        onTapped: () {
+                          print(
+                              "email: ${controller.email.value} password: ${controller.password.value}");
+                          if(controller.formKey.currentState.validate()){
+                            controller.signInWithEmailAndPassword();
+                          }
+                        }),
                   ],
                 ),
               ),
