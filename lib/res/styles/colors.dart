@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 abstract class MColors{
 
   static const Color primaryColor = Color(0xff00C569);
+  static const Color secondaryColor = Color(0xffbdbfc3);
   static const Color iconColor = Color(0xff65d496);
 
 

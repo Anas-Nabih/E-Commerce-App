@@ -4,22 +4,26 @@ import 'package:sizer/sizer.dart';
 
 class CustomBTN extends StatelessWidget {
   final String text;
+  final Function onTapped;
   const CustomBTN({
-    this.text
+    this.text,this.onTapped
   });
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      height: 7.h,
-      width: double.infinity,
-      decoration: BoxDecoration(
-        color: MColors.primaryColor,
-        borderRadius: BorderRadius.circular(6),
+    return GestureDetector(
+      onTap: onTapped ?? (){},
+      child: Container(
+        height: 7.h,
+        width: double.infinity,
+        decoration: BoxDecoration(
+          color: MColors.primaryColor,
+          borderRadius: BorderRadius.circular(6),
+        ),
+        child: Center(child:
+        Text(text,style:
+        TextStyle(color: Colors.white,fontSize: 13.sp),)),
       ),
-      child: Center(child:
-      Text(text,style:
-      TextStyle(color: Colors.white,fontSize: 13.sp),)),
     );
   }
 }

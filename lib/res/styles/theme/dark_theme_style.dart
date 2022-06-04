@@ -1,5 +1,6 @@
 import 'package:e_commerse_app_uising_getx/res/styles/colors.dart';
 import 'package:flutter/material.dart';
+import 'package:sizer/sizer.dart';
 
 class DarkStyle{
   static ThemeData darkTheme(BuildContext context){
@@ -8,7 +9,7 @@ class DarkStyle{
         canvasColor: Colors.transparent,
         colorScheme: ColorScheme(
            brightness: Brightness.dark,
-          primary: MColors.darkScaffoldBackGroundColor,
+          primary: MColors.secondaryColor,
           onPrimary: MColors.darkScaffoldBackGroundColor,
           secondary: MColors.darkScaffoldBackGroundColor,
           onSecondary: MColors.darkScaffoldBackGroundColor,
@@ -21,16 +22,21 @@ class DarkStyle{
           onPrimaryContainer: MColors.darkScaffoldBackGroundColor,
 
         ),
-        backgroundColor:MColors.darkScaffoldBackGroundColor,
+        backgroundColor:Colors.white.withOpacity(0.05),
         primaryColorDark: MColors.darkScaffoldBackGroundColor,
-
-
         accentColor: Colors.red,
         brightness: Brightness.dark,
         primaryColor: Colors.amber,
         buttonTheme: ButtonThemeData(
           buttonColor: Colors.amber,
           disabledColor: Colors.red,
-        ));
+        ),
+    textTheme: TextTheme(
+        bodyText1: TextStyle(
+          color: Colors.white.withOpacity(0.85),
+          fontSize: 13.sp
+        ),
+    )
+    );
   }
 }
