@@ -1,6 +1,7 @@
 import 'package:e_commerse_app_uising_getx/widgets/custom_text.dart';
 import 'package:flutter/material.dart';
 import 'package:sizer/sizer.dart';
+import 'package:get/get.dart';
 
 class HeadLine extends StatelessWidget {
   final String title;
@@ -22,7 +23,7 @@ class HeadLine extends StatelessWidget {
           ),
           hasSuffix
               ? CustomText(
-                  text: "See all",
+                  text: "view all".tr,
                   fontWeight: FontWeight.w300,
                   fontSize: 13.sp,
                 )

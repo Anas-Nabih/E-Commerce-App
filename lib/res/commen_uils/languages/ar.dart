@@ -1,0 +1,15 @@
+const Map<String, String> ar = {
+  "Categories" : "الفئات",
+  "Best Selling" : "أفضل المبيعات",
+  "view all" : "عرض الكل",
+  "English" : "English",
+  "Arabic" : "العربية",
+  "Choose Language":"اختر اللغة",
+  "Edit Profile": "تعديل الملف الشخصي",
+  "Dark Mode":"الوضع الداكن",
+  "Shipping Address":"عنوان االشحن",
+  "Order history":"تاريخ الطلب",
+  "Cards":"البطاقات",
+  "Language":"اللغة",
+  "Log Out":"تسجيل الخروج",
+};
