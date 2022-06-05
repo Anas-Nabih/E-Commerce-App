@@ -1,5 +1,6 @@
-import 'package:e_commerse_app_uising_getx/res/commen_uils/preference/const.dart';
-import 'package:e_commerse_app_uising_getx/res/commen_uils/preference/helper.dart';
+
+ import 'package:e_commerse_app_uising_getx/res/storge/preference/const.dart';
+import 'package:e_commerse_app_uising_getx/res/storge/preference/helper.dart';
 
 class Prefs{
 

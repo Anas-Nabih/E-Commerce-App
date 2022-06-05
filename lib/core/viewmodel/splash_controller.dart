@@ -1,7 +1,7 @@
-import 'package:e_commerse_app_uising_getx/res/commen_uils/preference/prefs.dart';
-import 'package:e_commerse_app_uising_getx/view/auth/login_view.dart';
-import 'package:e_commerse_app_uising_getx/view/main_screens/main_view.dart';
+import 'package:e_commerse_app_uising_getx/res/storge/local_storge/local_storge.dart';
+import 'package:e_commerse_app_uising_getx/res/storge/preference/prefs.dart';
 import 'package:flutter/animation.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
 
 class SplashController extends GetxController
@@ -9,15 +9,21 @@ class SplashController extends GetxController
   AnimationController animationController;
 
   RxBool isLogin = false.obs;
+
+  String appLocale = "ar";
+
   @override
-  void onInit() {
+  void onInit() async {
     super.onInit();
     animationController = AnimationController(vsync: this);
     Prefs.getThemeMode.then((value) => isDark.value = value);
-    Prefs.getIsLogin.then(
-        (value) => isLogin.value = value);
-  }
+    Prefs.getIsLogin.then((value) => isLogin.value = value);
 
+    LocalStorage localeStorage = LocalStorage();
+    appLocale  = await localeStorage.getSelectedLanguage;
+    Get.updateLocale(Locale(appLocale));
+    update();
+  }
 
   RxBool isDark = false.obs;
 }

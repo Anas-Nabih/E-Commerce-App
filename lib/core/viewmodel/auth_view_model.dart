@@ -1,4 +1,4 @@
-import 'package:e_commerse_app_uising_getx/res/commen_uils/preference/prefs.dart';
+import 'package:e_commerse_app_uising_getx/res/storge/preference/prefs.dart';
 import 'package:e_commerse_app_uising_getx/view/auth/login_view.dart';
 import 'package:e_commerse_app_uising_getx/view/main_screens/main_view.dart';
 import 'package:firebase_auth/firebase_auth.dart';

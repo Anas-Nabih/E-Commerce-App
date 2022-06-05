@@ -1,5 +1,5 @@
- import 'package:e_commerse_app_uising_getx/res/commen_uils/preference/prefs.dart';
- import 'package:get/get.dart';
+import 'package:e_commerse_app_uising_getx/res/storge/preference/prefs.dart';
+import 'package:get/get.dart';
 
 class AccountController extends GetxController{
 
