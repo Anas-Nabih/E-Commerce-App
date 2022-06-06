@@ -10,7 +10,7 @@ class SplashController extends GetxController
 
   RxBool isLogin = false.obs;
 
-  String appLocale = "ar";
+  RxString appLocale = "ar".obs;
 
   @override
   void onInit() async {
@@ -20,10 +20,23 @@ class SplashController extends GetxController
     Prefs.getIsLogin.then((value) => isLogin.value = value);
 
     LocalStorage localeStorage = LocalStorage();
-    appLocale  = await localeStorage.getSelectedLanguage;
-    Get.updateLocale(Locale(appLocale));
+    appLocale.value  = await localeStorage.getSelectedLanguage;
+    Get.updateLocale(Locale(appLocale.value ));
     update();
   }
 
   RxBool isDark = false.obs;
+
+  void changeLanguage(String lang){
+    LocalStorage localeStorage = LocalStorage();
+    if(appLocale.value  == lang){
+      return;
+    }
+    if(lang == "ar"){
+      localeStorage.setSelectedLanguage("ar");
+    }else if(lang == "en"){
+      localeStorage.setSelectedLanguage("en");
+    }
+    update();
+  }
 }

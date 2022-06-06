@@ -29,6 +29,7 @@ class MyApp extends StatelessWidget {
   }
 
   final c = Get.put(SplashController());
+  final splashController = Get.find<SplashController>();
 
   @override
   Widget build(BuildContext context) {
@@ -42,7 +43,7 @@ class MyApp extends StatelessWidget {
             ? ThemeMode.dark
             : ThemeMode.light,
         translations: Translation(),
-        locale: Locale("en"),
+        locale: Locale(splashController.appLocale.value),
         fallbackLocale: Locale("en"),
         home: SplashView(),
       ),
