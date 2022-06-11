@@ -23,6 +23,11 @@ const Map<String, String> en = {
   "-OR-":"-OR-",
   "Sign in with Facebook":"Sign in with Facebook",
   "Sign in with Google":"Sign in with Google",
+  "Name":"Name",
+  "Please enter your name":"Please enter your name",
+  "password should be 6 chars at least" : "password should be 6 chars at least",
+  "Create Account Error": "Create Account Error",
+  "All fields are required":"All fields are required",
 
 
 };

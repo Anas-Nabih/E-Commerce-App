@@ -49,7 +49,7 @@ class SignInView extends GetView<AuthViewModel>{
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   CustomText(
-                    text: "Sign in",
+                    text: "Sign in".tr,
                     fontSize: 20.sp,
                     fontWeight: FontWeight.w600,
                   ),
@@ -57,8 +57,8 @@ class SignInView extends GetView<AuthViewModel>{
                     height: 6.h,
                   ),
                   CustomTextFormField(
-                    labelTitle: "Name",
-                    hintText: "Test User",
+                    labelTitle: "Name".tr,
+                    hintText: "Please enter your name".tr,
                     hasSuffix: true,
                     onChanged: (val)=>controller.userName.value = val,
                     onSave: (val)=>controller.userName.value = val,
@@ -72,7 +72,7 @@ class SignInView extends GetView<AuthViewModel>{
                     height: 4.h,
                   ),
                   CustomTextFormField(
-                    labelTitle: "Email",
+                    labelTitle: "Email".tr,
                     hintText: "User@gemail.com",
                     hasSuffix: true,
                       onChanged: (val)=>controller.email.value = val,
@@ -87,7 +87,7 @@ class SignInView extends GetView<AuthViewModel>{
                     height: 4.h,
                   ),
                   CustomTextFormField(
-                    labelTitle: "Password",
+                    labelTitle: "Password".tr,
                     hintText: "********",
                     hasSuffix: true,
                       onChanged: (val)=>controller.password.value = val,
@@ -96,7 +96,7 @@ class SignInView extends GetView<AuthViewModel>{
                         if(val.isEmpty){
                           return "please enter your password";
                         }else if(val.length < 6){
-                          return "password should be 6 chars at least";
+                          return "password should be 6 chars at least".tr;
                         }
                       }
                   ),
@@ -104,13 +104,13 @@ class SignInView extends GetView<AuthViewModel>{
                     height: 8.h,
                   ),
                   CustomBTN(
-                    text: "Sign in",
+                    text: "Sign in".tr,
                     onTapped: (){
                       _forKey.currentState.save();
                       if(_forKey.currentState.validate()){
                         controller.createAccountWithEmailAndPassword();
                       }else{
-                        Get.snackbar("Create Account Error", "All fields are required");
+                        Get.snackbar("Create Account Error".tr, "All fields are required".tr);
                       }
                     },
                   )

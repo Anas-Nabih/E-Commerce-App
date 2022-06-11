@@ -23,4 +23,9 @@ const Map<String, String> ar = {
   "-OR-":"-أو-",
   "Sign in with Facebook":"تسجيل الدخول باستخدام Facebook",
   "Sign in with Google":"تسجيل الدخول باستخدام Google",
+  "Name":"الاسم",
+  "Please enter your name":"من فضلك ادخل اسمك",
+  "password should be 6 chars at least" : "كلمة المرور لابد ان تنكون على الاقل من 6 حروف",
+  "Create Account Error": "حدث خطأ أثناء انشاء حساب",
+  "All fields are required":"كل الحقول مطلوبة",
 };

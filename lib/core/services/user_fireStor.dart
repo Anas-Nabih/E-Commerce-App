@@ -9,3 +9,4 @@ class FireStoreUser{
      userCollectionRef.doc(userModel.userId).set(userModel.toJson());
   }
 }
+

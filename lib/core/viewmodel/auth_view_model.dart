@@ -1,3 +1,5 @@
+import 'dart:convert';
+
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:e_commerse_app_uising_getx/core/services/user_fireStor.dart';
 import 'package:e_commerse_app_uising_getx/model/user_model.dart';
@@ -36,8 +38,8 @@ class AuthViewModel extends GetxController {
     final AuthCredential credential = GoogleAuthProvider.credential(
         idToken: googleSignInAuthentication.idToken,
         accessToken: googleSignInAuthentication.accessToken);
-
-    Get.offAll(MainView());
+    await _auth.signInWithCredential(credential).then((user) async => saveUser(userCredential: user));
+    Get.offAll(()=>MainView());
   }
 
   signInWithFacebook() async {
@@ -46,9 +48,8 @@ class AuthViewModel extends GetxController {
 
     if (result.status == FacebookLoginStatus.loggedIn) {
       final facebookCredential = FacebookAuthProvider.credential(accessToken);
-      await _auth.signInWithCredential(facebookCredential);
-      print(facebookCredential);
-    }
+      await _auth.signInWithCredential(facebookCredential).then((user) async => saveUser(userCredential: user));
+     }
   }
 
   signInWithEmailAndPassword() async {
@@ -68,15 +69,10 @@ class AuthViewModel extends GetxController {
 
   createAccountWithEmailAndPassword() async {
     try {
-      await _auth.createUserWithEmailAndPassword(
-          email: email.value, password: password.value)
-          .then((user) async{
-            await FireStoreUser().addUserToFireStore(UserModel(
-              userId: user.user.uid,
-              email: user.user.email,
-              name: userName.value,
-            ));
-      });
+      await _auth
+          .createUserWithEmailAndPassword(
+              email: email.value, password: password.value)
+          .then((user) async => saveUser(userCredential: user));
       Prefs.setIsLogin(true);
       Prefs.setUserName(userName.value);
       Get.offAll(() => MainView());
@@ -95,10 +91,9 @@ class AuthViewModel extends GetxController {
     Get.offAll(() => LoginView());
   }
 
-  deleteUser()async{
-    final collection = await FirebaseFirestore.instance
-        .collection("user")
-        .get();
+  deleteUser() async {
+    final collection =
+        await FirebaseFirestore.instance.collection("user").get();
     final batch = FirebaseFirestore.instance.batch();
 
     for (final doc in collection.docs) {
@@ -106,6 +101,22 @@ class AuthViewModel extends GetxController {
     }
 
     return batch.commit();
-    }
+  }
 
+  void saveUser({UserCredential userCredential}) async {
+    await FireStoreUser().addUserToFireStore(UserModel(
+      userId: userCredential.user.uid,
+      email: userCredential.user.email,
+      image: userCredential.user.photoURL,
+      name: userName.value == "" ? userCredential.user.displayName : userName.value,
+    ));
+
+    Prefs.setCurrentUser(jsonEncode(UserModel(
+      userId: userCredential.user.uid,
+      email: userCredential.user.email,
+      image: userCredential.user.photoURL,
+      name: userName.value == "" ? userCredential.user.displayName : userName.value,
+    ).toJson()));
+
+  }
 }
