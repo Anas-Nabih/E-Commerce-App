@@ -1,10 +1,10 @@
-import 'package:e_commerse_app_uising_getx/model/best_selling_model.dart';
+ import 'package:e_commerse_app_uising_getx/model/product_model.dart';
 import 'package:e_commerse_app_uising_getx/widgets/product_card.dart';
 import 'package:flutter/material.dart';
 import 'package:sizer/sizer.dart';
 
 class CustomGridView extends StatelessWidget {
-  final List<BestSelling> gridList;
+  final List<ProductModel> gridList;
   final bool isFromHome;
 
   const CustomGridView({this.gridList, this.isFromHome = false});
@@ -16,7 +16,7 @@ class CustomGridView extends StatelessWidget {
       child: Padding(
         padding: EdgeInsets.symmetric(horizontal: 8.w),
         child: GridView.builder(
-          itemCount: BestSelling.bestSellingList.length,
+          itemCount: gridList.length,
           physics:BouncingScrollPhysics(),
           shrinkWrap: true,
           gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
@@ -25,7 +25,7 @@ class CustomGridView extends StatelessWidget {
               mainAxisSpacing: 2.h,
               crossAxisSpacing: 6.w),
           itemBuilder: (context, index) => ProductCard(
-            product: BestSelling.bestSellingList[index],
+            product: gridList[index],
           ),
         ),
       ),

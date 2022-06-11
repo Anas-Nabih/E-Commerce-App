@@ -1,4 +1,4 @@
-import 'package:e_commerse_app_uising_getx/model/best_selling_model.dart';
+ import 'package:e_commerse_app_uising_getx/model/product_model.dart';
 import 'package:e_commerse_app_uising_getx/res/styles/colors.dart';
 import 'package:e_commerse_app_uising_getx/view/product_details/product_details.dart';
 import 'package:e_commerse_app_uising_getx/widgets/custom_text.dart';
@@ -8,7 +8,7 @@ import 'package:sizer/sizer.dart';
 
 
 class ProductCard extends StatelessWidget {
-  final BestSelling product;
+  final ProductModel product;
 
   const ProductCard({this.product});
 
@@ -19,7 +19,7 @@ class ProductCard extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Image.asset(product.image),
+          Image.network(product.image),
           SizedBox(
             height: 1.h,
           ),

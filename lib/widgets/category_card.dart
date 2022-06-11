@@ -18,6 +18,7 @@ class CategoryCard extends StatelessWidget {
           height: 9.h,
           width: 9.h,
           margin: EdgeInsets.symmetric(horizontal: 2.w, vertical: 2.h),
+          padding: EdgeInsets.symmetric(horizontal: 2.w, vertical: 2.h),
           decoration: BoxDecoration(
               color: Colors.white,
               shape: BoxShape.circle,
@@ -30,10 +31,13 @@ class CategoryCard extends StatelessWidget {
               ]),
           child: Image.network(categoryItem.image),
         ),
-        CustomText(
-          text: categoryItem.name,
-          fontWeight: FontWeight.w400,
-          fontSize: 12.sp,
+        SizedBox(
+          width: 8.h,
+          child: CustomText(
+            text: categoryItem.name,
+            fontWeight: FontWeight.w400,
+            fontSize: 10.sp,
+          ),
         )
       ],
     );

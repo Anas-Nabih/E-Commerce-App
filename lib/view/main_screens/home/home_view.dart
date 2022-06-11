@@ -59,7 +59,7 @@ class HomeView extends GetView<HomeViewModel> {
                         );
                       } else {
                         return CustomGridView(
-                          gridList: BestSelling.bestSellingList,
+                          gridList: controller.trendingProducts,
                           isFromHome: true,
                         );
                       }
