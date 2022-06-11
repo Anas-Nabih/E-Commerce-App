@@ -28,4 +28,7 @@ const Map<String, String> ar = {
   "password should be 6 chars at least" : "كلمة المرور لابد ان تنكون على الاقل من 6 حروف",
   "Create Account Error": "حدث خطأ أثناء انشاء حساب",
   "All fields are required":"كل الحقول مطلوبة",
+  "Home":"Home",
+  "Cart":"Cart",
+  "Account":"Account"
 };

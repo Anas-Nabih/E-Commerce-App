@@ -28,6 +28,9 @@ const Map<String, String> en = {
   "password should be 6 chars at least" : "password should be 6 chars at least",
   "Create Account Error": "Create Account Error",
   "All fields are required":"All fields are required",
+  "Home":"Home",
+  "Cart":"Cart",
+  "Account":"Account"
 
 
 };

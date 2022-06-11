@@ -13,6 +13,7 @@ class MainView extends GetView<MainViewModel> {
         init: MainViewModel(),
         builder: (controller) => Container(
           height: 8.h,
+          padding: EdgeInsets.symmetric(vertical: .5.h),
           decoration: BoxDecoration(
               color: Theme.of(context).backgroundColor,
               borderRadius: BorderRadius.only(
@@ -23,26 +24,52 @@ class MainView extends GetView<MainViewModel> {
                     blurRadius: 1,
                     spreadRadius: 1)
               ]),
-          child: GetBuilder(
+          child: GetBuilder<MainViewModel>(
             init: MainViewModel(),
-            builder: (controller) => TabBar(
+            builder:(controller) =>  TabBar(
               controller: controller.tabController,
+
               indicatorColor: Theme.of(context).backgroundColor,
               tabs: [
-                Icon(
-                  Icons.home,
-                  color: controller.tabIndex.value == 0
-                      ? MColors.primaryColor
-                      : MColors.hintColor,
-                ),
-                Icon(
-                  Icons.add,
-                  color: MColors.primaryColor,
-                ),
-                Icon(
-                  Icons.add,
-                  color: MColors.primaryColor,
-                ),
+                Tab(
+                    icon: Image.asset("assets/images/home.png",
+                        width:5.w, color: controller.tabController.index == 0 ?
+                             MColors.primaryColor
+                            : MColors.tabsTextColor),
+                    child: Text(
+                      "Home".tr,
+                      style: TextStyle(
+                    color: controller.tabController.index == 0
+                    ? MColors.primaryColor
+                        : MColors.tabsTextColor,
+                        fontSize: 8.sp),
+                    )),
+                Tab(
+                    icon: Image.asset("assets/images/shopping-cart.png",
+                        width: 5.w,  color: controller.tabController.index== 1 ?
+                        MColors.primaryColor
+                            : MColors.tabsTextColor),
+                  child: Text(
+                  "Cart".tr,
+                  style: TextStyle(
+                      color: controller.tabController.index == 1
+                          ? MColors.primaryColor
+                          : MColors.tabsTextColor,
+                      fontSize: 8.sp),
+                )),
+                Tab(
+                    icon: Image.asset("assets/images/user.png",
+                        width: 5.w, color:controller.tabController.index == 2 ?
+                        MColors.primaryColor
+                            : MColors.tabsTextColor),
+                    child: Text(
+                      "Account".tr,
+                      style: TextStyle(
+                          color: controller.tabController.index == 2
+                              ? MColors.primaryColor
+                              : MColors.tabsTextColor,
+                          fontSize: 8.sp),
+                    )),
               ],
             ),
           ),

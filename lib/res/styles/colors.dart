@@ -5,6 +5,7 @@ abstract class MColors{
   static const Color primaryColor = Color(0xff00C569);
   static const Color secondaryColor = Color(0xffbdbfc3);
   static const Color iconColor = Color(0xff65d496);
+  static const Color tabsTextColor   = Color(0xFF848B92);
 
 
   /// lightTheme

@@ -1,12 +1,12 @@
-import 'package:e_commerse_app_uising_getx/model/home_model.dart';
-import 'package:e_commerse_app_uising_getx/view/catergories_view/categories_view.dart';
+import 'package:e_commerse_app_uising_getx/model/category_model.dart';
+ import 'package:e_commerse_app_uising_getx/view/catergories_view/categories_view.dart';
 import 'package:e_commerse_app_uising_getx/widgets/category_card.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
  import 'package:sizer/sizer.dart';
 
 class CategoriesList extends StatelessWidget {
-  final List<Home> categoriesList;
+  final List<CategoryModel> categoriesList;
 
   const CategoriesList({this.categoriesList});
 
