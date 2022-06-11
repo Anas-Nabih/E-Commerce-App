@@ -12,4 +12,17 @@ const Map<String, String> en = {
   "Cards":"Cards",
   "Language":"Language",
   "Log Out":"Log Out",
+  "Welcome":"Welcome",
+  "sign in":"sign in",
+  "Sign in to continue":"Sign in to continue",
+  "Email":"Email",
+  "please enter your email":"please enter your email",
+  "Password":"Password",
+  "Forget password?":"Forget password?",
+  "Sign in":"Sign in",
+  "-OR-":"-OR-",
+  "Sign in with Facebook":"Sign in with Facebook",
+  "Sign in with Google":"Sign in with Google",
+
+
 };

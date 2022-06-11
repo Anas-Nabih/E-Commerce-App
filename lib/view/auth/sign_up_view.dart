@@ -33,15 +33,15 @@ class SignInView extends GetView<AuthViewModel>{
             padding: EdgeInsets.symmetric(vertical: 2.h, horizontal: 4.w),
             margin: EdgeInsets.symmetric(horizontal: 6.w),
             decoration: BoxDecoration(
-                color: Colors.white,
+                color: Theme.of(context).backgroundColor,
                 borderRadius: BorderRadius.circular(2.w),
                 boxShadow: [
-                  BoxShadow(
-                    color: Colors.grey.withOpacity(0.2),
-                    offset: Offset(-2, 3),
-                    spreadRadius: 1,
-                    blurRadius: 8,
-                  )
+                  // BoxShadow(
+                  //   color: Colors.grey.withOpacity(0.2),
+                  //   offset: Offset(-2, 3),
+                  //   spreadRadius: 1,
+                  //   blurRadius: 8,
+                  // )
                 ]),
             child: Form(
               key: _forKey,

@@ -1,3 +1,6 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:e_commerse_app_uising_getx/core/services/user_fireStor.dart';
+import 'package:e_commerse_app_uising_getx/model/user_model.dart';
 import 'package:e_commerse_app_uising_getx/res/storge/preference/prefs.dart';
 import 'package:e_commerse_app_uising_getx/view/auth/login_view.dart';
 import 'package:e_commerse_app_uising_getx/view/main_screens/main_view.dart';
@@ -66,7 +69,14 @@ class AuthViewModel extends GetxController {
   createAccountWithEmailAndPassword() async {
     try {
       await _auth.createUserWithEmailAndPassword(
-          email: email.value, password: password.value);
+          email: email.value, password: password.value)
+          .then((user) async{
+            await FireStoreUser().addUserToFireStore(UserModel(
+              userId: user.user.uid,
+              email: user.user.email,
+              name: userName.value,
+            ));
+      });
       Prefs.setIsLogin(true);
       Prefs.setUserName(userName.value);
       Get.offAll(() => MainView());
@@ -84,4 +94,18 @@ class AuthViewModel extends GetxController {
     Prefs.setIsLogin(false);
     Get.offAll(() => LoginView());
   }
+
+  deleteUser()async{
+    final collection = await FirebaseFirestore.instance
+        .collection("user")
+        .get();
+    final batch = FirebaseFirestore.instance.batch();
+
+    for (final doc in collection.docs) {
+      batch.delete(doc.reference);
+    }
+
+    return batch.commit();
+    }
+
 }

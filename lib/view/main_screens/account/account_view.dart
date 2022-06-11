@@ -142,7 +142,8 @@ class AccountView extends GetView<AccountController> {
                                                         decoration:
                                                             BoxDecoration(
                                                                 color: controller
-                                                                            .appLocale.value  ==
+                                                                            .appLocale
+                                                                            .value ==
                                                                         "en"
                                                                     ? MColors
                                                                         .primaryColor
@@ -153,7 +154,9 @@ class AccountView extends GetView<AccountController> {
                                                                 border:
                                                                     Border.all(
                                                                   color: MColors
-                                                                          .hintColor.withOpacity(0.4),
+                                                                      .hintColor
+                                                                      .withOpacity(
+                                                                          0.4),
                                                                 ),
                                                                 borderRadius:
                                                                     BorderRadius
@@ -187,7 +190,8 @@ class AccountView extends GetView<AccountController> {
                                                         decoration:
                                                             BoxDecoration(
                                                                 color: controller
-                                                                            .appLocale.value  ==
+                                                                            .appLocale
+                                                                            .value ==
                                                                         "ar"
                                                                     ? MColors
                                                                         .primaryColor
@@ -197,8 +201,10 @@ class AccountView extends GetView<AccountController> {
                                                                         .transparent,
                                                                 border:
                                                                     Border.all(
-                                                                  color:  MColors
-                                                                      .hintColor.withOpacity(0.4),
+                                                                  color: MColors
+                                                                      .hintColor
+                                                                      .withOpacity(
+                                                                          0.4),
                                                                 ),
                                                                 borderRadius:
                                                                     BorderRadius

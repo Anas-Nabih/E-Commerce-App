@@ -40,21 +40,21 @@ class LoginView extends GetView<AuthViewModel> {
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         Text(
-                          "Welcome",
+                          "Welcome".tr,
                           style: TextStyle(
                               fontSize: 18.sp, fontWeight: FontWeight.bold),
                         ),
                         GestureDetector(
                             onTap: () => Get.to(()=>SignInView()),
                             child: Text(
-                              "sign in",
+                              "sign in".tr,
                               style: TextStyle(
                                   fontSize: 14.sp, color: MColors.primaryColor),
                             )),
                       ],
                     ),
                     Text(
-                      "Sign in to continue",
+                      "Sign in to continue".tr,
                       style: TextStyle(
                           color: MColors.hintColor,
                           fontSize: 12.sp,
@@ -69,14 +69,14 @@ class LoginView extends GetView<AuthViewModel> {
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             CustomTextFormField(
-                              labelTitle: "Email",
+                              labelTitle: "Email".tr,
                               hintText: "user@gmail.com",
                               hasSuffix: true,
                               onSave: (val) => controller.email.value = val,
                               onChanged: (val) => controller.email.value = val,
                                 validator:(val){
                                   if(val.isEmpty){
-                                    return "please enter your email";
+                                    return "please enter your email".tr;
                                   }
                                   return null;
                                 } ,
@@ -84,7 +84,7 @@ class LoginView extends GetView<AuthViewModel> {
                               height: 4.h,
                             ),
                             CustomTextFormField(
-                              labelTitle: "Password",
+                              labelTitle: "Password".tr,
                               hintText: "********",
                               obscure: controller.visiblePassword.value,
                               hasSuffix: true,
@@ -108,12 +108,12 @@ class LoginView extends GetView<AuthViewModel> {
                     ),
                     Align(
                         alignment: Alignment.topRight,
-                        child: Text("Forget password?")),
+                        child: Text("Forget password?".tr)),
                     SizedBox(
                       height: 4.h,
                     ),
                     CustomBTN(
-                        text: "Sign in",
+                        text: "Sign in".tr,
                         onTapped: () {
                           print(
                               "email: ${controller.email.value} password: ${controller.password.value}");
@@ -129,19 +129,19 @@ class LoginView extends GetView<AuthViewModel> {
                 height: 4.h,
               ),
               Text(
-                "-OR-",
+                "-OR-".tr,
                 style: TextStyle(fontSize: 15.sp),
               ),
               SizedBox(
                 height: 4.h,
               ),
               SocialBTN(
-                text: "Sign in with Facebook",
+                text: "Sign in with Facebook".tr,
                 img: "assets/images/ic_facebook.png",
                 onTapped: ()=>controller.signInWithFacebook(),
               ),
               SocialBTN(
-                text: "Sign in with Google",
+                text: "Sign in with Google".tr,
                 img: "assets/images/ic_google.png",
                 onTapped: ()=>controller.signInWithGoogle(),
               ),

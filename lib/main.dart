@@ -43,7 +43,7 @@ class MyApp extends StatelessWidget {
             ? ThemeMode.dark
             : ThemeMode.light,
         translations: Translation(),
-        locale: Locale(splashController.appLocale.value),
+        // locale: Locale(splashController.appLocale.value),
         fallbackLocale: Locale("en"),
         home: SplashView(),
       ),
