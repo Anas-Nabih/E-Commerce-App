@@ -2,19 +2,22 @@ class ProductModel {
   String title;
   String image;
   String desc;
+  String details;
   String price;
   String color;
   String sized;
-  String productId;
-  String categoryId;
+  int id;
+  int categoryId;
 
   ProductModel(
       {this.image,
       this.price,
       this.title,
-      this.productId,
+      this.id,
       this.color,
       this.desc,
+        this.details,
+      this.categoryId,
       this.sized});
 
   ProductModel.fromJson(Map<String, dynamic> json) {
@@ -25,11 +28,12 @@ class ProductModel {
     title = json["title"];
     image = json["image"];
     desc = json["desc"];
+    details = json["details"];
     price = json["price"];
     color = json["color"];
     sized = json["sized"];
-    categoryId = json["categoryId"];
-    productId = json["category_id"];
+    categoryId = json["category_id"];
+    id = json["id"];
   }
 
   toJson() {
@@ -37,10 +41,11 @@ class ProductModel {
       "title": title,
       "image": image,
       "desc": desc,
+      "details": details,
       "price": price,
       "color": color,
       "sized": sized,
-      "product_id": productId,
+      "id": id,
       "category_id": categoryId,
     };
   }

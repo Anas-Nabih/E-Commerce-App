@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:sizer/sizer.dart';
 
 class PriceBottomSheet extends StatelessWidget {
-  final double price;
+  final String price;
   final String btnTitle;
   final Function onTapped;
   const PriceBottomSheet({this.price,this.onTapped,this.btnTitle});
@@ -15,12 +15,12 @@ class PriceBottomSheet extends StatelessWidget {
       padding: EdgeInsets.symmetric(horizontal: 6.w,vertical: 1.h),
       height: 9.h,
       decoration: BoxDecoration(
-        color: Colors.white,
+         color:Theme.of(context).scaffoldBackgroundColor,
         boxShadow: [
-          BoxShadow(
+          Theme.of(context).brightness == Brightness.light ? BoxShadow(
               color: MColors.lightGreyColor,
               spreadRadius: 3,blurRadius: 2
-          )
+          ) : BoxShadow()
         ]
     ),
       child: Row(
@@ -32,7 +32,7 @@ class PriceBottomSheet extends StatelessWidget {
             children: [
               CustomText(text: "PRICE",fontWeight: FontWeight.w400,
                 fontSize: 12.sp,),
-              CustomText(text: "\$$price",fontWeight: FontWeight.w600,
+              CustomText(text: "$price EGP",fontWeight: FontWeight.w600,
                 fontSize: 14.sp,color: MColors.primaryColor,),
             ],
           ),

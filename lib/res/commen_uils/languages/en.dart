@@ -30,7 +30,10 @@ const Map<String, String> en = {
   "All fields are required":"All fields are required",
   "Home":"Home",
   "Cart":"Cart",
-  "Account":"Account"
+  "Account":"Account",
+  "Color":"Color",
+  "Details":"Details"
+
 
 
 };

@@ -15,7 +15,7 @@ class ProductCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: ()=>Get.to(ProductDetailsView(),arguments: product),
+      onTap: ()=>Get.to(()=>ProductDetailsView(),arguments: product),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [

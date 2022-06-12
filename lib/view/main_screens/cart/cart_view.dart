@@ -12,7 +12,7 @@ class CartView extends GetView{
       body: Column(
         children: [
           CartList(list:BestSelling.bestSellingList),
-          PriceBottomSheet(price: 1500,btnTitle: "Check out",),
+          PriceBottomSheet(price: "1500",btnTitle: "Check out",),
           SizedBox(height: 8.h,)
         ],
       ),
