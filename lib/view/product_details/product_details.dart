@@ -26,9 +26,6 @@ class ProductDetailsView extends GetView<ProductDetailsController> {
                   title: Text(controller.itemBean.value.title,style: TextStyle
                     (
                     color: Colors.white
-
-
-
                   )),
                   background: Image.network(
                     controller.itemBean.value.image,

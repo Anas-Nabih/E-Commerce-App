@@ -12,5 +12,6 @@ class AccountController extends GetxController{
     return isDarkTheme.value;
   }
   RxBool openNotification = true.obs;
+  RxBool positive = true.obs;
 
 }

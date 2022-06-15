@@ -1,3 +1,4 @@
+import 'package:animated_toggle_switch/animated_toggle_switch.dart';
 import 'package:e_commerse_app_uising_getx/core/viewmodel/AccountController.dart';
 import 'package:e_commerse_app_uising_getx/res/storge/preference/prefs.dart';
 import 'package:e_commerse_app_uising_getx/res/styles/colors.dart';
@@ -59,13 +60,37 @@ class SwitchValAccountItem extends StatelessWidget {
                       accountController.openNotification.value = val;
                       Prefs.setNotificationStatus(val);
                     })
-                : CupertinoSwitch(
+                : AnimatedToggleSwitch<bool>.dual(
+              current: accountController.positive.value,
+              first: false,
+              second: true,
+              // dif: 50.0,
+              borderColor: Colors.transparent,
+              borderWidth: 4.0,
+              height: 40,
+              boxShadow: const [
+                BoxShadow(
+                  color: Colors.black26,
+                  spreadRadius: 1,
+                  blurRadius: 2,
+                  offset: Offset(0, 1.5),
+                ),
+              ],
+              onChanged: (b) =>  accountController.positive.value = b,
+              colorBuilder: (b) => b ? Colors.red : Colors.green,
+              iconBuilder: (value) => value
+                  ? Icon(Icons.coronavirus_rounded)
+                  : Icon(Icons.tag_faces_rounded),
+              textBuilder: (value) => value
+                  ? Center(child: Text('night'))
+                  : Center(child: Text('day')),
+            ), /*CupertinoSwitch(
                     value: accountController.getCurrentTheme(),
                     onChanged: (val) {
                       accountController.isDarkTheme.value = val;
                       Get.changeThemeMode(accountController.isDarkTheme.value ? ThemeMode.dark : ThemeMode.light);
                       Prefs.setThemeMode(val);
-                    })
+                    })*/
           ],
         ),
       ),

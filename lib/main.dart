@@ -31,6 +31,8 @@ class MyApp extends StatelessWidget {
   final c = Get.put(SplashController());
   final splashController = Get.find<SplashController>();
 
+
+
   @override
   Widget build(BuildContext context) {
     return Sizer(

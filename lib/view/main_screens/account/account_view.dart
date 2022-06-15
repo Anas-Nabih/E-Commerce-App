@@ -1,3 +1,4 @@
+import 'package:animated_toggle_switch/animated_toggle_switch.dart';
 import 'package:e_commerse_app_uising_getx/core/viewmodel/AccountController.dart';
 import 'package:e_commerse_app_uising_getx/core/viewmodel/auth_view_model.dart';
 import 'package:e_commerse_app_uising_getx/core/viewmodel/splash_controller.dart';
@@ -11,6 +12,9 @@ import 'package:sizer/sizer.dart';
 
 class AccountView extends GetView<AccountController> {
   final authController = Get.put(AuthViewModel());
+
+
+
 
   @override
   Widget build(BuildContext context) {
@@ -77,6 +81,7 @@ class AccountView extends GetView<AccountController> {
                         AccountItem(
                           title: "Edit Profile".tr,
                         ),
+
                         SwitchValAccountItem(
                             title: "Notifications".tr,
                             isNotificationSwitcher: true),

@@ -119,4 +119,6 @@ class AuthViewModel extends GetxController {
     ).toJson()));
 
   }
+
+  RxBool positive = false.obs;
 }
