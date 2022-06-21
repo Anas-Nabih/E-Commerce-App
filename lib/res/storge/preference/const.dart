@@ -14,4 +14,10 @@ class Const {
   static const String USER_TOKEN = "USER_TOKEN";
 
   static const String APP_LOCAL = "APP_LOCAL";
+
+  static final String tableCartProduct = "CART_PRODUCT";
+  static final String columnName = "NAME";
+  static final String columnImage = "IMAGE";
+  static final String columnQuantity = "QUANTITY";
+  static final String columnPrice = "PRICE";
 }
